@@ -1,0 +1,19 @@
+This is just a regular text file...
+but it has some Jinja2 mixed in.
+
+For example, each site is different and has a name, e.g. {{ site }}
+
+I might want to use an IP address like:
+    {{ ip.ipNetworkName[1] }}.{{ ip.ipNetworkName[2] }}.{{ ip.ipNetworkName[3] }}.{{ ip.ipNetworkName[4] }}/{{ ip.ipNetworkName[5] }}
+
+I might also want to use the next /24 following this one:
+    {{ ip.ipNetworkName[1] }}.{{ ip.ipNetworkName[2] }}.{{ ip.ipNetworkName[3] + 1 }}.{{ ip.ipNetworkName[4] }}/{{ ip.ipNetworkName[5] }}
+
+Maybe that site name looks better in all caps: {{ site.upper() }}
+
+... this is pretty basic Jinja with a pretty basic runner to show how things work.
+but it also includes some secrets!!
+
+If you don't KNOW the {{ secrets.SecretVar }}, it'll just put the Jinja code back in (this is 1-for-1 -- don't do math with this simple example).
+
+oh... and don't name a site "secrets" - or anything else that overlaps your secrets.json! You'll get confused even if Python won't.
