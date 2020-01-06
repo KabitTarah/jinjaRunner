@@ -6,5 +6,11 @@
 			"ipNetworkName": ["octets count at 1",10,10,10,0,24],
 			"explanation": ["skip zero","1st octet","2nd octet","3rd octet", "4th octet", "bits in mask"]
 		}
+	},
+	"xmpl1": {
+		"site": "Example 1",
+		"ip": {
+			"ipNetworkName": ["octets count at 1",192,168,100,0,24]
+		}
 	}
 }
