@@ -4,6 +4,13 @@
 
 This is a very simple runner for Jinja templating. Run in python, it supports multiple "sites" and very basic (not super secure) secrets keeping.
 
+## Files & Format
+
+  * `globals.json` - This should be in the local dir. Variables are accessed by `{{ global.variable }}`. "secret" cannot be a variable name.
+  * `sites.json` - This should be in the local dir. Variables are accessed by `{{ variable }}`. Specific sites are accessed via the command line. "global" and "secret" cannot be variable names.
+  * `secrets.json` - This should be in `~/.secrets/`. Variables are accessed by `{{ global.secret.variable }}`
+  * `site_secrets.json` - This should be in `~/.secrets/`. Variables are accessed by `{{ secret.variable }}
+
 ## Running Jinja Runner
 
 Basic usage out of the box: `python jinja_runner.py sitecode template.txt` changes template.txt into:
@@ -25,7 +32,7 @@ Maybe that site name looks better in all caps: SITE NAME
 ... this is pretty basic Jinja with a pretty basic runner to show how things work.
 but it also includes some secrets!!
 
-If you don't KNOW the {{ secrets.SecretVar }}, it'll just put the Jinja code back in (this is 1-for-1 -- don't do math with this simple example).
+If you don't KNOW the {{ global.secret.SecretVar }}, it'll just put the Jinja code back in (this is 1-for-1 -- don't do math with this simple example).
 
 oh... and don't name a site "secrets" - or anything else that overlaps your secrets.json! You'll get confused even if Python won't.
 ```
