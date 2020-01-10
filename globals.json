@@ -1,0 +1,9 @@
+{
+    "file info": {
+        "description": "Globals - keys / values that are the same at all sites",
+        "file format": "JSON standard with variables in unnamed base dictionary (JSON: Object)",
+        "use format": "This file is loaded into the base dictionary",
+        "note": "The keys 'site' and 'secret' are invalid are removed before applying template. Bias should be to hard-code these values in templates or make them site specific."
+    },
+    "someVar": "Every site gets access to this variable!"
+}

@@ -1,4 +1,10 @@
 {
+	"file info": {
+		"description": "Site - Unique values per site",
+		"file format": "JSON standard with variables in unnamed base dictionary (JSON: Object) and nested site dictionary (JSON: Object)",
+		"use format": "This file is loaded into the dictionary sub-key 'site' which replaces the site dictionary name",
+		"note": "The key 'secret' is invalid for any site and is removed before applying template"
+	},
 	"sitecode": {
 		"site": "Site Name",
 		"someVar": "SomeInfo",
